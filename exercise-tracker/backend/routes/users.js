@@ -2,7 +2,9 @@
 const router = require('express').Router();
 let User = require('../models/user.model');
 
+//DISPLAY LIST OF ALL USERS IN DATABASE
 //The first endpoint; handles incoming HTTP GET requests on the /users/ URL path
+//insomnia: users/ 
 router.route('/').get((req, res) => {
     //mongoose method; call this to get a list of all the users from the database
     User.find()
@@ -10,7 +12,10 @@ router.route('/').get((req, res) => {
     .catch(err => res.status(400).json('Error: ' + err)); //if the user is not found
 });
 
+
+//ADD NEW USER
 //The second endpoint; handles incoming HTTP POST requests on the /users/add/ URL path
+//insomnia: users/add & type information 
 router.route('/add').post((req, res) => {
     const username = req.body.username;
 

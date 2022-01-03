@@ -8,6 +8,7 @@ require('dotenv').config();
 // how we create express server 
 const app = express();
 const port = process.env.PORT || 5000; //port that server will be on
+//The server URL is https://localhost:5000
 
 app.use(cors());
 app.use(express.json()); //allows us to parse JSON (because our server sends out and receives JSON)
